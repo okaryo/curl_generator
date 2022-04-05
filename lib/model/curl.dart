@@ -11,4 +11,8 @@ class Curl with _$Curl {
   }) = _Curl;
 
   const Curl._();
+
+  String get command {
+    return 'curl -X ${method.string} ${url.toString()}';
+  }
 }
