@@ -9,7 +9,7 @@ final curlProvider = StateNotifierProvider<CurlController, Curl>((_) {
 class CurlController extends StateNotifier<Curl> {
   CurlController() : super(Curl(method: CurlMethod.get, url: Uri.parse('https://sample.com')));
 
-  setMethod(CurlMethod method) => state = state.copyWith(method: method);
+  setMethodBy(int index) => state = state.copyWith(method: CurlMethodExtension.from(index));
 
   setUrl(String url) => state = state.copyWith(url: Uri.parse(url));
 }
