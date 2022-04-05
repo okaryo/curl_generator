@@ -1,3 +1,4 @@
+import 'package:curl_generator/view/curl_generator.dart';
 import 'package:flutter/material.dart';
 
 class MainApp extends StatelessWidget {
@@ -12,7 +13,7 @@ class MainApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text('CurlGenerator')),
-        body: const Text('Hello World!'),
+        body: CurlGenerator(),
       ),
     );
   }
