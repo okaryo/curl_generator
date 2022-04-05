@@ -1,11 +1,14 @@
 import 'package:curl_generator/model/curl_method.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class Curl {
-  final CurlMethod method;
-  final Uri url;
+part 'curl.freezed.dart';
 
-  const Curl({
-    required final this.method,
-    required final this.url,
-  });
+@freezed
+class Curl with _$Curl {
+  factory Curl({
+    required CurlMethod method,
+    required Uri url,
+  }) = _Curl;
+
+  const Curl._();
 }
