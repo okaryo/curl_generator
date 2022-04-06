@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'curl_param.dart';
+part of 'param.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,11 +15,11 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$CurlParamTearOff {
-  const _$CurlParamTearOff();
+class _$ParamTearOff {
+  const _$ParamTearOff();
 
-  _CurlParam call(String key, String value) {
-    return _CurlParam(
+  _Param call(String key, String value) {
+    return _Param(
       key,
       value,
     );
@@ -27,32 +27,31 @@ class _$CurlParamTearOff {
 }
 
 /// @nodoc
-const $CurlParam = _$CurlParamTearOff();
+const $Param = _$ParamTearOff();
 
 /// @nodoc
-mixin _$CurlParam {
+mixin _$Param {
   String get key => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CurlParamCopyWith<CurlParam> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ParamCopyWith<Param> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CurlParamCopyWith<$Res> {
-  factory $CurlParamCopyWith(CurlParam value, $Res Function(CurlParam) then) =
-      _$CurlParamCopyWithImpl<$Res>;
+abstract class $ParamCopyWith<$Res> {
+  factory $ParamCopyWith(Param value, $Res Function(Param) then) =
+      _$ParamCopyWithImpl<$Res>;
   $Res call({String key, String value});
 }
 
 /// @nodoc
-class _$CurlParamCopyWithImpl<$Res> implements $CurlParamCopyWith<$Res> {
-  _$CurlParamCopyWithImpl(this._value, this._then);
+class _$ParamCopyWithImpl<$Res> implements $ParamCopyWith<$Res> {
+  _$ParamCopyWithImpl(this._value, this._then);
 
-  final CurlParam _value;
+  final Param _value;
   // ignore: unused_field
-  final $Res Function(CurlParam) _then;
+  final $Res Function(Param) _then;
 
   @override
   $Res call({
@@ -73,29 +72,28 @@ class _$CurlParamCopyWithImpl<$Res> implements $CurlParamCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CurlParamCopyWith<$Res> implements $CurlParamCopyWith<$Res> {
-  factory _$CurlParamCopyWith(
-          _CurlParam value, $Res Function(_CurlParam) then) =
-      __$CurlParamCopyWithImpl<$Res>;
+abstract class _$ParamCopyWith<$Res> implements $ParamCopyWith<$Res> {
+  factory _$ParamCopyWith(_Param value, $Res Function(_Param) then) =
+      __$ParamCopyWithImpl<$Res>;
   @override
   $Res call({String key, String value});
 }
 
 /// @nodoc
-class __$CurlParamCopyWithImpl<$Res> extends _$CurlParamCopyWithImpl<$Res>
-    implements _$CurlParamCopyWith<$Res> {
-  __$CurlParamCopyWithImpl(_CurlParam _value, $Res Function(_CurlParam) _then)
-      : super(_value, (v) => _then(v as _CurlParam));
+class __$ParamCopyWithImpl<$Res> extends _$ParamCopyWithImpl<$Res>
+    implements _$ParamCopyWith<$Res> {
+  __$ParamCopyWithImpl(_Param _value, $Res Function(_Param) _then)
+      : super(_value, (v) => _then(v as _Param));
 
   @override
-  _CurlParam get _value => super._value as _CurlParam;
+  _Param get _value => super._value as _Param;
 
   @override
   $Res call({
     Object? key = freezed,
     Object? value = freezed,
   }) {
-    return _then(_CurlParam(
+    return _then(_Param(
       key == freezed
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -110,8 +108,8 @@ class __$CurlParamCopyWithImpl<$Res> extends _$CurlParamCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CurlParam extends _CurlParam {
-  const _$_CurlParam(this.key, this.value) : super._();
+class _$_Param extends _Param {
+  const _$_Param(this.key, this.value) : super._();
 
   @override
   final String key;
@@ -120,14 +118,14 @@ class _$_CurlParam extends _CurlParam {
 
   @override
   String toString() {
-    return 'CurlParam(key: $key, value: $value)';
+    return 'Param(key: $key, value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CurlParam &&
+            other is _Param &&
             const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
@@ -140,13 +138,13 @@ class _$_CurlParam extends _CurlParam {
 
   @JsonKey(ignore: true)
   @override
-  _$CurlParamCopyWith<_CurlParam> get copyWith =>
-      __$CurlParamCopyWithImpl<_CurlParam>(this, _$identity);
+  _$ParamCopyWith<_Param> get copyWith =>
+      __$ParamCopyWithImpl<_Param>(this, _$identity);
 }
 
-abstract class _CurlParam extends CurlParam {
-  const factory _CurlParam(String key, String value) = _$_CurlParam;
-  const _CurlParam._() : super._();
+abstract class _Param extends Param {
+  const factory _Param(String key, String value) = _$_Param;
+  const _Param._() : super._();
 
   @override
   String get key;
@@ -154,6 +152,5 @@ abstract class _CurlParam extends CurlParam {
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$CurlParamCopyWith<_CurlParam> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ParamCopyWith<_Param> get copyWith => throw _privateConstructorUsedError;
 }

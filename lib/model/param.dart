@@ -1,12 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'curl_param.freezed.dart';
+part 'param.freezed.dart';
 
 @freezed
-class CurlParam with _$CurlParam {
-  const factory CurlParam(String key, String value) = _CurlParam;
+class Param with _$Param {
+  const factory Param(String key, String value) = _Param;
 
-  const CurlParam._();
+  const Param._();
 
   String get query => '$key=$value';
 

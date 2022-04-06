@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'curl_params.dart';
+part of 'params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,43 +15,41 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$CurlParamsTearOff {
-  const _$CurlParamsTearOff();
+class _$ParamsTearOff {
+  const _$ParamsTearOff();
 
-  _CurlParams call(List<CurlParam> values) {
-    return _CurlParams(
+  _Params call(List<Param> values) {
+    return _Params(
       values,
     );
   }
 }
 
 /// @nodoc
-const $CurlParams = _$CurlParamsTearOff();
+const $Params = _$ParamsTearOff();
 
 /// @nodoc
-mixin _$CurlParams {
-  List<CurlParam> get values => throw _privateConstructorUsedError;
+mixin _$Params {
+  List<Param> get values => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CurlParamsCopyWith<CurlParams> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ParamsCopyWith<Params> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CurlParamsCopyWith<$Res> {
-  factory $CurlParamsCopyWith(
-          CurlParams value, $Res Function(CurlParams) then) =
-      _$CurlParamsCopyWithImpl<$Res>;
-  $Res call({List<CurlParam> values});
+abstract class $ParamsCopyWith<$Res> {
+  factory $ParamsCopyWith(Params value, $Res Function(Params) then) =
+      _$ParamsCopyWithImpl<$Res>;
+  $Res call({List<Param> values});
 }
 
 /// @nodoc
-class _$CurlParamsCopyWithImpl<$Res> implements $CurlParamsCopyWith<$Res> {
-  _$CurlParamsCopyWithImpl(this._value, this._then);
+class _$ParamsCopyWithImpl<$Res> implements $ParamsCopyWith<$Res> {
+  _$ParamsCopyWithImpl(this._value, this._then);
 
-  final CurlParams _value;
+  final Params _value;
   // ignore: unused_field
-  final $Res Function(CurlParams) _then;
+  final $Res Function(Params) _then;
 
   @override
   $Res call({
@@ -61,61 +59,59 @@ class _$CurlParamsCopyWithImpl<$Res> implements $CurlParamsCopyWith<$Res> {
       values: values == freezed
           ? _value.values
           : values // ignore: cast_nullable_to_non_nullable
-              as List<CurlParam>,
+              as List<Param>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$CurlParamsCopyWith<$Res> implements $CurlParamsCopyWith<$Res> {
-  factory _$CurlParamsCopyWith(
-          _CurlParams value, $Res Function(_CurlParams) then) =
-      __$CurlParamsCopyWithImpl<$Res>;
+abstract class _$ParamsCopyWith<$Res> implements $ParamsCopyWith<$Res> {
+  factory _$ParamsCopyWith(_Params value, $Res Function(_Params) then) =
+      __$ParamsCopyWithImpl<$Res>;
   @override
-  $Res call({List<CurlParam> values});
+  $Res call({List<Param> values});
 }
 
 /// @nodoc
-class __$CurlParamsCopyWithImpl<$Res> extends _$CurlParamsCopyWithImpl<$Res>
-    implements _$CurlParamsCopyWith<$Res> {
-  __$CurlParamsCopyWithImpl(
-      _CurlParams _value, $Res Function(_CurlParams) _then)
-      : super(_value, (v) => _then(v as _CurlParams));
+class __$ParamsCopyWithImpl<$Res> extends _$ParamsCopyWithImpl<$Res>
+    implements _$ParamsCopyWith<$Res> {
+  __$ParamsCopyWithImpl(_Params _value, $Res Function(_Params) _then)
+      : super(_value, (v) => _then(v as _Params));
 
   @override
-  _CurlParams get _value => super._value as _CurlParams;
+  _Params get _value => super._value as _Params;
 
   @override
   $Res call({
     Object? values = freezed,
   }) {
-    return _then(_CurlParams(
+    return _then(_Params(
       values == freezed
           ? _value.values
           : values // ignore: cast_nullable_to_non_nullable
-              as List<CurlParam>,
+              as List<Param>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_CurlParams extends _CurlParams {
-  const _$_CurlParams(this.values) : super._();
+class _$_Params extends _Params {
+  const _$_Params(this.values) : super._();
 
   @override
-  final List<CurlParam> values;
+  final List<Param> values;
 
   @override
   String toString() {
-    return 'CurlParams(values: $values)';
+    return 'Params(values: $values)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CurlParams &&
+            other is _Params &&
             const DeepCollectionEquality().equals(other.values, values));
   }
 
@@ -125,18 +121,17 @@ class _$_CurlParams extends _CurlParams {
 
   @JsonKey(ignore: true)
   @override
-  _$CurlParamsCopyWith<_CurlParams> get copyWith =>
-      __$CurlParamsCopyWithImpl<_CurlParams>(this, _$identity);
+  _$ParamsCopyWith<_Params> get copyWith =>
+      __$ParamsCopyWithImpl<_Params>(this, _$identity);
 }
 
-abstract class _CurlParams extends CurlParams {
-  const factory _CurlParams(List<CurlParam> values) = _$_CurlParams;
-  const _CurlParams._() : super._();
+abstract class _Params extends Params {
+  const factory _Params(List<Param> values) = _$_Params;
+  const _Params._() : super._();
 
   @override
-  List<CurlParam> get values;
+  List<Param> get values;
   @override
   @JsonKey(ignore: true)
-  _$CurlParamsCopyWith<_CurlParams> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ParamsCopyWith<_Params> get copyWith => throw _privateConstructorUsedError;
 }

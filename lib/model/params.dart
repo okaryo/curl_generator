@@ -1,14 +1,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'curl_param.dart';
+import 'param.dart';
 
-part 'curl_params.freezed.dart';
+part 'params.freezed.dart';
 
 @freezed
-class CurlParams with _$CurlParams {
-  const factory CurlParams(List<CurlParam> values) = _CurlParams;
+class Params with _$Params {
+  const factory Params(List<Param> values) = _Params;
 
-  const CurlParams._();
+  const Params._();
 
   String get queries {
     return values.fold('', (queries, param) {
@@ -20,4 +20,6 @@ class CurlParams with _$CurlParams {
       return queries;
     });
   }
+
+  bool get isEmpty => values.isEmpty;
 }

@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CurlTearOff {
   const _$CurlTearOff();
 
-  _Curl call({required CurlMethod method, required Uri url}) {
+  _Curl call({required Method method, required Url url}) {
     return _Curl(
       method: method,
       url: url,
@@ -31,8 +31,8 @@ const $Curl = _$CurlTearOff();
 
 /// @nodoc
 mixin _$Curl {
-  CurlMethod get method => throw _privateConstructorUsedError;
-  Uri get url => throw _privateConstructorUsedError;
+  Method get method => throw _privateConstructorUsedError;
+  Url get url => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CurlCopyWith<Curl> get copyWith => throw _privateConstructorUsedError;
@@ -42,7 +42,9 @@ mixin _$Curl {
 abstract class $CurlCopyWith<$Res> {
   factory $CurlCopyWith(Curl value, $Res Function(Curl) then) =
       _$CurlCopyWithImpl<$Res>;
-  $Res call({CurlMethod method, Uri url});
+  $Res call({Method method, Url url});
+
+  $UrlCopyWith<$Res> get url;
 }
 
 /// @nodoc
@@ -62,12 +64,19 @@ class _$CurlCopyWithImpl<$Res> implements $CurlCopyWith<$Res> {
       method: method == freezed
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as CurlMethod,
+              as Method,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as Url,
     ));
+  }
+
+  @override
+  $UrlCopyWith<$Res> get url {
+    return $UrlCopyWith<$Res>(_value.url, (value) {
+      return _then(_value.copyWith(url: value));
+    });
   }
 }
 
@@ -76,7 +85,10 @@ abstract class _$CurlCopyWith<$Res> implements $CurlCopyWith<$Res> {
   factory _$CurlCopyWith(_Curl value, $Res Function(_Curl) then) =
       __$CurlCopyWithImpl<$Res>;
   @override
-  $Res call({CurlMethod method, Uri url});
+  $Res call({Method method, Url url});
+
+  @override
+  $UrlCopyWith<$Res> get url;
 }
 
 /// @nodoc
@@ -97,11 +109,11 @@ class __$CurlCopyWithImpl<$Res> extends _$CurlCopyWithImpl<$Res>
       method: method == freezed
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as CurlMethod,
+              as Method,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as Uri,
+              as Url,
     ));
   }
 }
@@ -112,9 +124,9 @@ class _$_Curl extends _Curl {
   _$_Curl({required this.method, required this.url}) : super._();
 
   @override
-  final CurlMethod method;
+  final Method method;
   @override
-  final Uri url;
+  final Url url;
 
   @override
   String toString() {
@@ -143,13 +155,13 @@ class _$_Curl extends _Curl {
 }
 
 abstract class _Curl extends Curl {
-  factory _Curl({required CurlMethod method, required Uri url}) = _$_Curl;
+  factory _Curl({required Method method, required Url url}) = _$_Curl;
   _Curl._() : super._();
 
   @override
-  CurlMethod get method;
+  Method get method;
   @override
-  Uri get url;
+  Url get url;
   @override
   @JsonKey(ignore: true)
   _$CurlCopyWith<_Curl> get copyWith => throw _privateConstructorUsedError;
