@@ -1,5 +1,6 @@
 import 'package:curl_generator/model/curl.dart';
-import 'package:curl_generator/model/curl_method.dart';
+import 'package:curl_generator/model/method.dart';
+import 'package:curl_generator/model/url.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final curlProvider = StateNotifierProvider<CurlController, Curl>((_) {
@@ -7,9 +8,9 @@ final curlProvider = StateNotifierProvider<CurlController, Curl>((_) {
 });
 
 class CurlController extends StateNotifier<Curl> {
-  CurlController() : super(Curl(method: CurlMethod.get, url: Uri.parse('https://sample.com')));
+  CurlController() : super(Curl.init());
 
-  setMethodBy(int index) => state = state.copyWith(method: CurlMethodExtension.from(index));
+  setMethodBy(int index) => state = state.copyWith(method: MethodExtension.from(index));
 
-  setUrl(String url) => state = state.copyWith(url: Uri.parse(url));
+  setUrl(String url) => state = state.copyWith(url: Url(url));
 }
