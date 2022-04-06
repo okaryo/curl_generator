@@ -1,10 +1,10 @@
-import 'package:curl_generator/model/curl_param.dart';
+import 'package:curl_generator/model/param.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('#query', () {
     test('should return query string', () {
-      final actual = const CurlParam('key', 'value').query;
+      final actual = const Param('key', 'value').query;
       final expected = 'key=value';
 
       expect(actual, expected);
@@ -14,7 +14,7 @@ void main() {
   group('#isValid', () {
     group('when both key and value are not empty', () {
       test('should return true', () {
-        final actual = const CurlParam('key', 'value').isValid();
+        final actual = const Param('key', 'value').isValid();
 
         expect(actual, isTrue);
       });
@@ -22,7 +22,7 @@ void main() {
 
     group('when key is empty', () {
       test('should return false', () {
-        final actual = const CurlParam('', 'value').isValid();
+        final actual = const Param('', 'value').isValid();
 
         expect(actual, isFalse);
       });
@@ -30,7 +30,7 @@ void main() {
 
     group('when value is empty', () {
       test('should return false', () {
-        final actual = const CurlParam('key', '').isValid();
+        final actual = const Param('key', '').isValid();
 
         expect(actual, isFalse);
       });
@@ -38,7 +38,7 @@ void main() {
 
     group('when both key and value are empty', () {
       test('should return false', () {
-        final actual = const CurlParam('', '').isValid();
+        final actual = const Param('', '').isValid();
 
         expect(actual, isFalse);
       });

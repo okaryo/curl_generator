@@ -1,11 +1,11 @@
-import 'package:curl_generator/model/curl_method.dart';
+import 'package:curl_generator/model/method.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('#from', () {
     test('should return CurlMethod', () {
-      final actual = CurlMethodExtension.from(0);
-      final expected = CurlMethod.get;
+      final actual = MethodExtension.from(0);
+      final expected = Method.get;
 
       expect(actual, expected);
     });
@@ -14,7 +14,7 @@ void main() {
   group('#string', () {
     group('when method is get', () {
       test('should return corresponding string', () {
-        final actual = CurlMethod.get.string;
+        final actual = Method.get.string;
         final expected = 'GET';
 
         expect(actual, expected);
@@ -23,7 +23,7 @@ void main() {
 
     group('when method is post', () {
       test('should return corresponding string', () {
-        final actual = CurlMethod.post.string;
+        final actual = Method.post.string;
         final expected = 'POST';
 
         expect(actual, expected);
@@ -32,7 +32,7 @@ void main() {
 
     group('when method is put', () {
       test('should return corresponding string', () {
-        final actual = CurlMethod.put.string;
+        final actual = Method.put.string;
         final expected = 'PUT';
 
         expect(actual, expected);
@@ -41,7 +41,7 @@ void main() {
 
     group('when method is delete', () {
       test('should return corresponding string', () {
-        final actual = CurlMethod.delete.string;
+        final actual = Method.delete.string;
         final expected = 'DELETE';
 
         expect(actual, expected);

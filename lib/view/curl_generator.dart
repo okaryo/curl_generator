@@ -1,5 +1,6 @@
 import 'package:curl_generator/controller/curl_controller.dart';
-import 'package:curl_generator/model/curl_method.dart';
+import 'package:curl_generator/model/method.dart';
+import 'package:curl_generator/model/url.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -38,8 +39,8 @@ class CurlGenerator extends ConsumerWidget {
     );
   }
 
-  Widget _buildMethodDropDown(CurlMethod selectedMethod, WidgetRef ref) {
-    final items = CurlMethod.values.map((method) {
+  Widget _buildMethodDropDown(Method selectedMethod, WidgetRef ref) {
+    final items = Method.values.map((method) {
       return DropdownMenuItem(child: Text(method.name), value: method.index);
     }).toList();
 
@@ -50,8 +51,8 @@ class CurlGenerator extends ConsumerWidget {
     );
   }
 
-  Widget _buildUrlInputField(Uri uri, WidgetRef ref) {
-    final controller = TextEditingController(text: uri.toString());
+  Widget _buildUrlInputField(Url url, WidgetRef ref) {
+    final controller = TextEditingController(text: url.string);
     controller.selection = TextSelection.fromPosition(
       TextPosition(offset: controller.text.length),
     );
