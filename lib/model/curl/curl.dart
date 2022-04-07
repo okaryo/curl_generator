@@ -1,5 +1,5 @@
-import 'package:curl_generator/model/method.dart';
-import 'package:curl_generator/model/url.dart';
+import 'package:curl_generator/model/method/method.dart';
+import 'package:curl_generator/model/url/url.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'curl.freezed.dart';

@@ -1,6 +1,6 @@
-import 'package:curl_generator/model/curl.dart';
-import 'package:curl_generator/model/method.dart';
-import 'package:curl_generator/model/url.dart';
+import 'package:curl_generator/model/curl/curl.dart';
+import 'package:curl_generator/model/method/method.dart';
+import 'package:curl_generator/model/url/url.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final curlProvider = StateNotifierProvider<CurlController, Curl>((_) {

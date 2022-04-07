@@ -1,4 +1,4 @@
-import 'package:curl_generator/model/params.dart';
+import 'package:curl_generator/model/params/params.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'url.freezed.dart';

@@ -1,4 +1,4 @@
-import 'package:curl_generator/model/method.dart';
+import 'package:curl_generator/model/method/method.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
