@@ -11,10 +11,13 @@ class CurlCommandWidget extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10),
+        color: Colors.black,
       ),
-      child: Text(_command),
+      child: Text(
+        '\$ $_command',
+        style: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 16),
+      ),
     );
   }
 }
