@@ -13,7 +13,7 @@ class CurlCommandWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: AlignmentDirectional.center,
+      alignment: AlignmentDirectional.topEnd,
       children: [
         Container(
           width: double.infinity,
@@ -28,6 +28,7 @@ class CurlCommandWidget extends StatelessWidget {
           ),
         ),
         Positioned(
+          top: 14,
           right: 16,
           child: Center(child: _buildCopyIcon()),
         ),
