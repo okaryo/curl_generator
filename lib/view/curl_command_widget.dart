@@ -1,10 +1,14 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CurlCommandWidget extends StatelessWidget {
   final String _command;
+  final toolTipTextProvider = StateProvider.autoDispose<String>((_) => '');
 
-  const CurlCommandWidget(this._command);
+  CurlCommandWidget(this._command);
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +36,23 @@ class CurlCommandWidget extends StatelessWidget {
   }
 
   Widget _buildCopyIcon() {
-    return IconButton(
-      padding: EdgeInsets.zero,
-      constraints: const BoxConstraints(),
-      onPressed: () => Clipboard.setData(ClipboardData(text: _command)),
-      icon: const Icon(Icons.copy, color: Colors.white),
-    );
+    return Consumer(builder: (context, ref, _) {
+      final toolTipText = ref.watch(toolTipTextProvider);
+
+      return IconButton(
+        tooltip: toolTipText,
+        padding: EdgeInsets.zero,
+        constraints: const BoxConstraints(),
+        onPressed: () {
+          Clipboard.setData(ClipboardData(text: _command));
+          ref.read(toolTipTextProvider.notifier).state = 'Copied!';
+          Timer.periodic(const Duration(seconds: 1), (timer) {
+            ref.read(toolTipTextProvider.notifier).state = '';
+            timer.cancel();
+          });
+        },
+        icon: const Icon(Icons.copy, color: Colors.white),
+      );
+    });
   }
 }
