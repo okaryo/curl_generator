@@ -1,7 +1,6 @@
 import 'package:curl_generator/model/curl/curl.dart';
 import 'package:curl_generator/model/method/method.dart';
 import 'package:curl_generator/model/params/param.dart';
-import 'package:curl_generator/model/url/url.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final curlProvider = StateNotifierProvider.autoDispose<CurlController, Curl>((_) {
@@ -13,7 +12,10 @@ class CurlController extends StateNotifier<Curl> {
 
   setMethodBy(int index) => state = state.copyWith(method: MethodExtension.from(index));
 
-  setUrl(String url) => state = state.copyWith(url: Url(url));
+  setUrl(String url) {
+    final newUrl = state.url.copyWith(url: url);
+    state = state.copyWith(url: newUrl);
+  }
 
   updateParamKey(String key, int index) {
     final newParams = state.url.params.updateParamKeyAt(key, index);

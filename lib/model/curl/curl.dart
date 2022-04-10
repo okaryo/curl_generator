@@ -1,4 +1,6 @@
 import 'package:curl_generator/model/method/method.dart';
+import 'package:curl_generator/model/params/param.dart';
+import 'package:curl_generator/model/params/params.dart';
 import 'package:curl_generator/model/url/url.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -16,7 +18,7 @@ class Curl with _$Curl {
   factory Curl.init() {
     return Curl(
       method: Method.get,
-      url: const Url('https://sample.com'),
+      url: const Url('https://sample.com', Params([Param('', '')])),
     );
   }
 

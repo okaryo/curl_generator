@@ -12,7 +12,7 @@ void main() {
       final actual = CurlController().debugState;
       final expected = Curl(
         method: Method.get,
-        url: const Url('https://sample.com'),
+        url: const Url('https://sample.com', Params([Param('', '')])),
       );
 
       expect(actual, expected);
@@ -37,7 +37,7 @@ void main() {
       controller.setUrl('https://new.com');
 
       final actual = controller.debugState.url;
-      final expected = const Url('https://new.com');
+      final expected = const Url('https://new.com', Params([Param('', '')]));
 
       expect(actual, expected);
     });
@@ -46,7 +46,6 @@ void main() {
   group('#updateParamKey', () {
     test('should update param key', () {
       final controller = CurlController();
-      controller.addParam();
       controller.addParam();
       controller.updateParamKey('key1', 1);
 
@@ -63,7 +62,6 @@ void main() {
   group('#updateParamValue', () {
     test('should update param value', () {
       final controller = CurlController();
-      controller.addParam();
       controller.addParam();
       controller.updateParamValue('value1', 1);
 
@@ -85,6 +83,7 @@ void main() {
       final actual = controller.debugState.url.params;
       final expected = const Params([
         Param('', ''),
+        Param('', ''),
       ]);
 
       expect(actual, expected);
@@ -94,7 +93,6 @@ void main() {
   group('#removeLastParams', () {
     test('should add new param', () {
       final controller = CurlController();
-      controller.addParam();
       controller.updateParamKey('key1', 0);
       controller.addParam();
       controller.updateParamKey('key2', 1);
