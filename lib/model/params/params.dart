@@ -22,4 +22,36 @@ class Params with _$Params {
   }
 
   bool get isEmpty => values.isEmpty;
+
+  Params add(Param param) => Params([...values, param]);
+
+  Params removeLast() {
+    if (isEmpty) return this;
+
+    final List<Param> newValues = [];
+    for (int i = 0; i < this.values.length; i++) {
+      if (i != this.values.length - 1) newValues.add(this.values[i]);
+    }
+    return Params(newValues);
+  }
+
+  Params updateParamKeyAt(String key, int index) {
+    final newValues = this.values.asMap().entries.map((entry) {
+      final param = entry.value;
+
+      if (entry.key == index) return Param(key, param.value);
+      return param;
+    }).toList();
+    return Params(newValues);
+  }
+
+  Params updateParamValueAt(String value, int index) {
+    final newValues = this.values.asMap().entries.map((entry) {
+      final param = entry.value;
+
+      if (entry.key == index) return Param(param.key, value);
+      return param;
+    }).toList();
+    return Params(newValues);
+  }
 }

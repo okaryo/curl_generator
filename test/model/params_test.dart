@@ -72,4 +72,75 @@ void main() {
       });
     });
   });
+
+  group('#add', () {
+    test('should add param to values', () {
+      final actual = const Params([
+        Param('key1', 'value1'),
+        Param('key2', 'value2'),
+      ]).add(const Param('key3', 'value3'));
+      final expected = const Params([
+        Param('key1', 'value1'),
+        Param('key2', 'value2'),
+        Param('key3', 'value3'),
+      ]);
+
+      expect(actual, expected);
+    });
+  });
+
+  group('#removeLast', () {
+    group('when values are empty', () {
+      test('should not remove', () {
+        final actual = const Params([]).removeLast();
+        final expected = const Params([]);
+
+        expect(actual, expected);
+      });
+    });
+
+    group('when values are not empty', () {
+      test('should remove last param', () {
+        final actual = const Params([
+          Param('key1', 'value1'),
+          Param('key2', 'value2'),
+        ]).removeLast();
+        final expected = const Params([
+          Param('key1', 'value1'),
+        ]);
+
+        expect(actual, expected);
+      });
+    });
+  });
+
+  group('#updateParamKeyAt', () {
+    test('should update specified param key', () {
+      final actual = const Params([
+        Param('key1', 'value1'),
+        Param('key2', 'value2'),
+      ]).updateParamKeyAt('newKey', 1);
+      final expected = const Params([
+        Param('key1', 'value1'),
+        Param('newKey', 'value2'),
+      ]);
+
+      expect(actual, expected);
+    });
+  });
+
+  group('#updateParamValueAt', () {
+    test('should update specified param value', () {
+      final actual = const Params([
+        Param('key1', 'value1'),
+        Param('key2', 'value2'),
+      ]).updateParamValueAt('newValue', 1);
+      final expected = const Params([
+        Param('key1', 'value1'),
+        Param('key2', 'newValue'),
+      ]);
+
+      expect(actual, expected);
+    });
+  });
 }
