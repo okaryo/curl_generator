@@ -13,6 +13,7 @@ class UrlWidget extends ConsumerWidget {
 
     return Container(
       decoration: BoxDecoration(
+        color: Colors.white,
         border: Border.all(color: Colors.grey),
         borderRadius: const BorderRadius.all(Radius.circular(5)),
       ),
