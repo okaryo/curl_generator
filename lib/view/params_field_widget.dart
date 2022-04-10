@@ -78,7 +78,7 @@ class ParamsFieldWidget extends StatelessWidget {
             padding: EdgeInsets.all(8),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text('Key'),
+              child: Text('Key', style: TextStyle(fontWeight: FontWeight.bold)),
             ),
           ),
         ),
@@ -88,7 +88,7 @@ class ParamsFieldWidget extends StatelessWidget {
             padding: EdgeInsets.all(8),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text('Value'),
+              child: Text('Value', style: TextStyle(fontWeight: FontWeight.bold)),
             ),
           ),
         ),
