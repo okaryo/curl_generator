@@ -4,7 +4,7 @@ import 'package:curl_generator/model/url/url.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class InputFieldWidget extends ConsumerWidget {
+class UrlWidget extends ConsumerWidget {
   final _provider = curlProvider;
 
   @override
