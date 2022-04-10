@@ -1,5 +1,6 @@
 import 'package:curl_generator/controller/curl_controller.dart';
 import 'package:curl_generator/view/curl_command_widget.dart';
+import 'package:curl_generator/view/footer_widget.dart';
 import 'package:curl_generator/view/options_widget.dart';
 import 'package:curl_generator/view/url_widget.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,9 @@ class CurlGenerator extends ConsumerWidget {
               UrlWidget(),
               const SizedBox(height: 16),
               OptionsWidget(),
+              const SizedBox(height: 16),
+              const Divider(),
+              FooterWidget(),
             ],
           ),
         ),
