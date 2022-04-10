@@ -1,3 +1,6 @@
+import 'package:curl_generator/view/body_field_widget.dart';
+import 'package:curl_generator/view/header_field_widget.dart';
+import 'package:curl_generator/view/params_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -23,58 +26,32 @@ class OptionsWidget extends StatelessWidget {
   }
 
   Widget _buildTabContent() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(12),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(5),
-          bottomLeft: Radius.circular(5),
+    return Consumer(builder: (context, ref, _) {
+      final selectedTab = ref.watch(selectedTabProvider);
+      Widget selectedContent;
+      switch (selectedTab) {
+        case Tab.params:
+          selectedContent = ParamsFieldWidget();
+          break;
+        case Tab.header:
+          selectedContent = HeaderFieldWidget();
+          break;
+        case Tab.body:
+          selectedContent = BodyFieldWidget();
+          break;
+      }
+
+      return Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(12),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(5),
+            bottomLeft: Radius.circular(5),
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          _buildParamsContent(),
-          _buildHeaderContent(),
-          _buildBodyContent(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildParamsContent() {
-    return Consumer(builder: (context, ref, _) {
-      final selectedTab = ref.watch(selectedTabProvider);
-      final isSelected = selectedTab == Tab.params;
-
-      return Visibility(
-        visible: isSelected,
-        child: Text('params'),
-      );
-    });
-  }
-
-  Widget _buildHeaderContent() {
-    return Consumer(builder: (context, ref, _) {
-      final selectedTab = ref.watch(selectedTabProvider);
-      final isSelected = selectedTab == Tab.header;
-
-      return Visibility(
-        visible: isSelected,
-        child: const Text('under development'),
-      );
-    });
-  }
-
-  Widget _buildBodyContent() {
-    return Consumer(builder: (context, ref, _) {
-      final selectedTab = ref.watch(selectedTabProvider);
-      final isSelected = selectedTab == Tab.body;
-
-      return Visibility(
-        visible: isSelected,
-        child: const Text('under development'),
+        child: selectedContent,
       );
     });
   }
