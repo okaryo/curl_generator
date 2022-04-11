@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text('CurlGenerator')),
+        appBar: AppBar(title: const Text('CurlGenerator'), centerTitle: false),
         body: CurlGenerator(),
       ),
     );
